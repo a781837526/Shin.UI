@@ -3255,11 +3255,11 @@
 		"it": "Posizione:"
 	},
 	"300otv3n": {
-		"zh-cn": "欢迎使用 Shin.NET 通用权限开发框架 <a href=\"https://gitee.com/zuohuaijun/ShinUI.NET\" target=\"_blank\">https://gitee.com/zuohuaijun/Admin.NET</a>",
-		"zh-hk": "歡迎使用 Shin.NET 通用權限開發框架 <a href=\"https://gitee.com/zuohuaijun/ShinUI.NET\" target=\"_blank\">https://gitee.com/zuohuaijun/Admin.NET</a>",
-		"zh-tw": "歡迎使用 Shin.NET 通用權限開發框架 <a href=\"https://gitee.com/zuohuaijun/ShinUI.NET\" target=\"_blank\">https://gitee.com/zuohuaijun/Admin.NET</a>",
-		"en": "Welcome to Shin.NET Universal Permission Framework <a href=\"https://gitee.com/zuohuaijun/ShinUI.NET\" target=\"_blank\">https://gitee.com/zuohuaijun/ShinUI.NET</a>",
-		"it": "Benvenuti in Shin.NET Framework di Autorizzazione Universale <a href=\"https://gitee.com/zuohuaijun/ShinUI.NET\" target=\"_blank\">https://gitee.com/zuohuaijun/ShinUI.NET</a>"
+		"zh-cn": "欢迎使用 Admin.NET 通用权限开发框架 <a href=\"https://gitee.com/zuohuaijun/Admin.NET\" target=\"_blank\">https://gitee.com/zuohuaijun/Admin.NET</a>",
+		"zh-hk": "歡迎使用 Admin.NET 通用權限開發框架 <a href=\"https://gitee.com/zuohuaijun/Admin.NET\" target=\"_blank\">https://gitee.com/zuohuaijun/Admin.NET</a>",
+		"zh-tw": "歡迎使用 Admin.NET 通用權限開發框架 <a href=\"https://gitee.com/zuohuaijun/Admin.NET\" target=\"_blank\">https://gitee.com/zuohuaijun/Admin.NET</a>",
+		"en": "Welcome to Admin.NET Universal Permission Framework <a href=\"https://gitee.com/zuohuaijun/Admin.NET\" target=\"_blank\">https://gitee.com/zuohuaijun/Admin.NET</a>",
+		"it": "Benvenuti in Admin.NET Framework di Autorizzazione Universale <a href=\"https://gitee.com/zuohuaijun/Admin.NET\" target=\"_blank\">https://gitee.com/zuohuaijun/Admin.NET</a>"
 	},
 	"ykunwe9": {
 		"zh-cn": "服务器已断线...",
@@ -8743,7 +8743,7 @@
 		"it": "Generatore espressioni Cron"
 	},
 	"h6ghbdvj": {
-		"zh-cn": "#region using\n\nusing Furion;\nusing Furion.Logging;\nusing Furion.RemoteRequest.Extensions;\nusing Furion.Schedule;\nusing Microsoft.Extensions.DependencyInjection;\nusing System;\nusing System.Data;\nusing System.Linq.Dynamic.Core;\nusing System.Linq.Expressions;\nusing System.Text;\nusing System.Threading;\nusing System.Threading.Tasks;\nusing Yitter.IdGenerator;\n\n#endregion\n\nnamespace Shin.NET.Core;\n\n/// <summary>\n/// 动态作业任务\n/// </summary>\n[JobDetail(\"你的作业编号\")]\npublic class DynamicJob : IJob\n{\n    private readonly IServiceProvider _serviceProvider;\n\n    public DynamicJob(IServiceProvider serviceProvider)\n    {\n        _serviceProvider = serviceProvider;\n    }\n\n    public async Task ExecuteAsync(JobExecutingContext context, CancellationToken stoppingToken)\n    {\n        using var serviceScope = _serviceProvider.CreateScope();\n        \n        // 获取用户仓储\n        // var rep = serviceScope.ServiceProvider.GetService<SqlSugarRepository<SysUser>>();\n\n        // 请求网址\n        // var result = await \"http://www.baidu.com\".GetAsStringAsync();\n        // Console.WriteLine(result);\n\n        // 日志\n        // Log.Information(\"日志消息\");\n    }\n}",
+		"zh-cn": "#region using\n\nusing Furion;\nusing Furion.Logging;\nusing Furion.RemoteRequest.Extensions;\nusing Furion.Schedule;\nusing Microsoft.Extensions.DependencyInjection;\nusing System;\nusing System.Data;\nusing System.Linq.Dynamic.Core;\nusing System.Linq.Expressions;\nusing System.Text;\nusing System.Threading;\nusing System.Threading.Tasks;\nusing Yitter.IdGenerator;\n\n#endregion\n\nnamespace Admin.NET.Core;\n\n/// <summary>\n/// 动态作业任务\n/// </summary>\n[JobDetail(\"你的作业编号\")]\npublic class DynamicJob : IJob\n{\n    private readonly IServiceProvider _serviceProvider;\n\n    public DynamicJob(IServiceProvider serviceProvider)\n    {\n        _serviceProvider = serviceProvider;\n    }\n\n    public async Task ExecuteAsync(JobExecutingContext context, CancellationToken stoppingToken)\n    {\n        using var serviceScope = _serviceProvider.CreateScope();\n        \n        // 获取用户仓储\n        // var rep = serviceScope.ServiceProvider.GetService<SqlSugarRepository<SysUser>>();\n\n        // 请求网址\n        // var result = await \"http://www.baidu.com\".GetAsStringAsync();\n        // Console.WriteLine(result);\n\n        // 日志\n        // Log.Information(\"日志消息\");\n    }\n}",
 		"zh-hk": "#region using",
 		"zh-tw": "#region using",
 		"en": "#region using",

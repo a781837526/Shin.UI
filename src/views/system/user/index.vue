@@ -5,7 +5,7 @@
 				<OrgTree ref="orgTreeRef" @node-click="nodeClick" />
 			</el-splitter-panel>
 			<el-splitter-panel :min="200" style="overflow: auto; display: flex; flex-direction: column;">
-				<el-card shadow="hover" :body-style="{ padding: 5 }">
+                <el-card shadow="hover" :body-style="{ padding: 5 }">
 					<el-form :model="state.queryParams" ref="queryForm" :inline="true">
 						<el-form-item label="账号">
 							<el-input v-model="state.queryParams.account" placeholder="账号" clearable />
@@ -72,8 +72,7 @@
 							show-overflow-tooltip />
 						<el-table-column label="状态" width="70" align="center" show-overflow-tooltip>
 							<template #default="scope">
-								<TagSwitch v-model="scope.row.status" :active-value="1" :inactive-value="2"
-									code="StatusEnum" @change="changeStatus(scope.row)" v-auth="'sysUser:setStatus'" />
+								<TagSwitch v-model="scope.row.status" :active-value="1" :inactive-value="2" code="StatusEnum" @change="changeStatus(scope.row)" v-auth="'sysUser:setStatus'" />
 							</template>
 						</el-table-column>
 						<el-table-column prop="orderNo" label="排序" width="70" align="center" show-overflow-tooltip />
@@ -97,35 +96,42 @@
 										style="padding-left: 12px" />
 									<template #dropdown>
 										<el-dropdown-menu>
-											<span v-auth="'sysUser:add'">
-												<el-dropdown-item icon="ele-CopyDocument" text type="primary"
-													@click="openCopyMenu(scope.row)">复制</el-dropdown-item>
-											</span>
+                                            <span v-auth="'sysUser:add'">
+                                                <el-dropdown-item icon="ele-CopyDocument" text type="primary"
+                                                    @click="openCopyMenu(scope.row)"
+                                                >复制</el-dropdown-item>
+                                            </span>
 											<span v-auth="'sysUser:resetPwd'">
-												<el-dropdown-item icon="ele-RefreshLeft" text type="danger"
-													@click="resetUserPwd(scope.row)">重置密码</el-dropdown-item>
-											</span>
+                                                <el-dropdown-item icon="ele-RefreshLeft" text type="danger"
+												    @click="resetUserPwd(scope.row)"
+                                                 >重置密码</el-dropdown-item>
+                                            </span>
 											<span v-auth="'sysUser:unlockLogin'">
-												<el-dropdown-item icon="ele-Unlock" text type="primary"
-													@click="unlockLogin(scope.row)">解除锁定</el-dropdown-item>
-											</span>
-
+                                                <el-dropdown-item icon="ele-Unlock" text type="primary"
+												    @click="unlockLogin(scope.row)"
+                                                >解除锁定</el-dropdown-item>
+                                            </span>
+											
 										</el-dropdown-menu>
 									</template>
 								</el-dropdown>
 							</template>
 						</el-table-column>
 					</el-table>
-					<el-pagination size="small" background v-model:currentPage="state.tableParams.page"
-						v-model:page-size="state.tableParams.pageSize" :total="state.tableParams.total"
-						:page-sizes="[10, 20, 50, 100]" @size-change="handleSizeChange"
-						@current-change="handleCurrentChange" layout="total, sizes, prev, pager, next, jumper" />
+					<el-pagination size="small" background 
+                        v-model:currentPage="state.tableParams.page" 
+                        v-model:page-size="state.tableParams.pageSize"
+                        :total="state.tableParams.total"
+                        :page-sizes="[10, 20, 50, 100]"
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange" 
+                        layout="total, sizes, prev, pager, next, jumper" 
+                    />
 				</el-card>
 			</el-splitter-panel>
 		</el-splitter>
 
-		<EditUser ref="editUserRef" :title="state.editUserTitle" :orgTreeData="state.orgTreeData"
-			@handleQuery="handleQuery" />
+		<EditUser ref="editUserRef" :title="state.editUserTitle" :orgTreeData="state.orgTreeData" @handleQuery="handleQuery" />
 	</div>
 </template>
 
@@ -305,8 +311,7 @@ const nodeClick = async (node: any) => {
 </script>
 
 <style scoped lang="scss">
-.el-form--inline .el-form-item,
-.el-form-item:last-of-type {
-	margin: 5px 15px;
+.el-form--inline .el-form-item,.el-form-item:last-of-type {
+    margin: 5px 15px;
 }
 </style>

@@ -35,7 +35,7 @@ const state = reactive({
 const getList = () => {
 	axios({
 		method: 'get',
-		url: 'https://gitee.com/api/v5/repos/zuohuaijun/Shin.NET/commits',
+		url: 'https://gitee.com/api/v5/repos/zuohuaijun/Admin.NET/commits',
 		params: {
 			page: 1,
 			per_page: 10,

@@ -121,11 +121,11 @@ export const aProvider = function () {
 				{
 					tid: 'aProviderModule.creater',
 					title: '制表人',
-					data: 'Shin.NET',
+					data: 'Admin.NET',
 					type: 'text',
 					options: {
 						field: 'creater',
-						testData: 'Shin.NET',
+						testData: 'Admin.NET',
 						height: 16,
 						fontSize: 6.75,
 						fontWeight: '700',
@@ -151,11 +151,11 @@ export const aProvider = function () {
 				{
 					tid: 'aProviderModule.signer',
 					title: '库管签字',
-					data: 'Shin.NET',
+					data: 'Admin.NET',
 					type: 'text',
 					options: {
 						field: 'signer',
-						testData: 'Shin.NET',
+						testData: 'Admin.NET',
 						height: 16,
 						fontSize: 6.75,
 						fontWeight: '700',
@@ -166,11 +166,11 @@ export const aProvider = function () {
 				{
 					tid: 'aProviderModule.director',
 					title: '经理签字',
-					data: 'Shin.NET',
+					data: 'Admin.NET',
 					type: 'text',
 					options: {
 						field: 'director',
-						testData: 'Shin.NET',
+						testData: 'Admin.NET',
 						height: 16,
 						fontSize: 6.75,
 						fontWeight: '700',

@@ -41,7 +41,7 @@ const initQrcode = () => {
 	nextTick(() => {
 		(<HTMLElement>qrcodeRef.value).innerHTML = '';
 		new QRCode(qrcodeRef.value, {
-			text: `https://gitee.com/zuohuaijun/Shin.NET`,
+			text: `https://gitee.com/zuohuaijun/Admin.NET`,
 			width: 260,
 			height: 260,
 			colorDark: '#000000',

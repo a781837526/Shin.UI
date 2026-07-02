@@ -31,10 +31,10 @@
 				</el-descriptions-item>
 
 				<el-descriptions-item label="Gitee">
-					<el-link type="primary" href="https://gitee.com/zuohuaijun/Shin.NET" target="_blank"> Gitee </el-link>
+					<el-link type="primary" href="https://gitee.com/zuohuaijun/Admin.NET" target="_blank"> Gitee </el-link>
 				</el-descriptions-item>
 				<el-descriptions-item label="Github">
-					<el-link type="primary" href="https://github.com/zuohuaijun/Shin.NET.git" target="_blank"> Github </el-link>
+					<el-link type="primary" href="https://github.com/zuohuaijun/Admin.NET.git" target="_blank"> Github </el-link>
 				</el-descriptions-item>
 
 				<el-descriptions-item label="文档地址">
