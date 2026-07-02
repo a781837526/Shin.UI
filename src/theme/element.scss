@@ -3,12 +3,12 @@
 /* Button 按钮
 ------------------------------- */
 .el-button {
-    font-family: var(--el-font-family);
+	font-family: var(--el-font-family);
 }
 .el-button.is-text {
-    .el-icon {
-        font-size: var(--el-font-size-medium);
-    }
+	.el-icon {
+		font-size: var(--el-font-size-medium);
+	}
 }
 
 // 按钮使用第三方字体图标正确用法
@@ -16,7 +16,6 @@
 //     <SvgIcon name="iconfont icon-yunshangchuan_o" class="el-icon" />
 //     <span>笑笑</span>
 // </el-button>
-
 
 /* Input 输入框、InputNumber 计数器
 ------------------------------- */
@@ -35,10 +34,10 @@
 }
 
 .el-date-editor {
-    //--el-date-editor-width: 220px;
-    //--el-date-editor-monthrange-width: 300px;
-    --el-date-editor-daterange-width: 250px;
-    //--el-date-editor-datetimerange-width: 400px;
+	//--el-date-editor-width: 220px;
+	//--el-date-editor-monthrange-width: 300px;
+	--el-date-editor-daterange-width: 250px;
+	//--el-date-editor-datetimerange-width: 400px;
 }
 
 /* Form 表单
@@ -60,13 +59,15 @@
 		// 	margin-bottom: 18px !important;
 		// }
 
-        .el-form-item,.el-form-item:last-of-type {
-            margin: 5px 15px !important;
+		.el-form-item,
+		.el-form-item:last-of-type {
+			margin: 5px 15px !important;
 
-            .el-select,.el-input {
-                width: 200px !important;
-            }
-        }
+			.el-select,
+			.el-input {
+				width: 200px !important;
+			}
+		}
 	}
 
 	// https://gitee.com/lyt-top/vue-next-admin/issues/I5K1PM
@@ -106,14 +107,14 @@
 	border-right: none !important;
 	width: auto;
 
-    .el-icon {
-        font-size: var(--el-font-size-medium);
-    }
+	.el-icon {
+		font-size: var(--el-font-size-medium);
+	}
 
-    .el-sub-menu__icon-arrow {
-        margin-top: 0;
-        top: unset;
-    }
+	.el-sub-menu__icon-arrow {
+		margin-top: 0;
+		top: unset;
+	}
 }
 
 .el-menu-item,
@@ -257,7 +258,7 @@
 	.el-menu-item,
 	.el-sub-menu__title {
 		height: 50px;
-        line-height: 50px;
+		line-height: 50px;
 		color: var(--next-bg-topBarColor);
 	}
 
@@ -295,12 +296,11 @@
 /* Tabs 标签页
 ------------------------------- */
 .el-tabs__header {
-    border-bottom: 1px solid var(--el-border-color-light);
+	border-bottom: 1px solid var(--el-border-color-light);
 }
 .el-tabs__nav-wrap::after {
 	content: none;
 }
-
 
 /* Dropdown 下拉菜单
 ------------------------------- */
@@ -346,38 +346,38 @@
 			padding: 0 !important;
 			margin: 0 auto !important;
 			position: absolute;
-            max-height: 100vh;
+			max-height: 100vh;
 
 			.el-dialog__body {
 				padding: 18px !important;
-                max-height: calc(100vh - 37px);
+				max-height: calc(100vh - 37px);
 			}
-            .el-dialog__body:has(+ .el-dialog__footer) {
-                padding-bottom: 0 !important;
-                margin-bottom: 18px;
-                max-height: calc(100vh - 37px - 47px - 18px);
-            }
+			.el-dialog__body:has(+ .el-dialog__footer) {
+				padding-bottom: 0 !important;
+				margin-bottom: 18px;
+				max-height: calc(100vh - 37px - 47px - 18px);
+			}
 		}
 	}
 }
 
 .el-dialog.is-fullscreen {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 
-    .el-dialog__body {
-        flex: 1;
-    }
-    .el-dialog__footer {
-        padding: 15px;
-        border-top: 1px solid var(--el-border-color);
-    }
+	.el-dialog__body {
+		flex: 1;
+	}
+	.el-dialog__footer {
+		padding: 15px;
+		border-top: 1px solid var(--el-border-color);
+	}
 }
 .el-dialog__body {
 	//max-height: calc(100vh - 160px) !important;
-    overflow-y: auto;
-    overflow-x: auto;
+	overflow-y: auto;
+	overflow-x: auto;
 }
 
 // .el-dialog__title{
@@ -387,19 +387,19 @@
 //     line-height: normal;
 // }
 .el-dialog__header {
-    --el-dialog-title-font-size: var(--el-font-size-base);
+	--el-dialog-title-font-size: var(--el-font-size-base);
 
 	margin-right: 0;
 	padding: 8px;
-    border-radius: var(--el-dialog-border-radius) var(--el-dialog-border-radius) 0 0;
+	border-radius: var(--el-dialog-border-radius) var(--el-dialog-border-radius) 0 0;
 	background: var(--el-color-primary);
-    color: #fff;
-    height: 37px;
-    line-height: 21px;
+	color: #fff;
+	height: 37px;
+	line-height: 21px;
 
-    .el-dialog__title {
-        color: #FFF;
-    }
+	.el-dialog__title {
+		color: #fff;
+	}
 }
 .el-dialog__footer {
 	padding: 0 15px 15px;
@@ -426,9 +426,9 @@
 .el-card__body {
 	--el-card-padding: 8px;
 }
-   // 由于card没有size属性，所以通过其子元素来判断,当组件大小选择为默认时
+// 由于card没有size属性，所以通过其子元素来判断,当组件大小选择为默认时
 .el-card__body:has(.el-table--default) {
-    --el-card-padding: 20px;
+	--el-card-padding: 20px;
 }
 
 /* Table 表格 element plus 2.2.0 版本
@@ -452,37 +452,48 @@
 }
 
 .el-table .el-table__cell {
-    &:has(.cell .el-button, .el-tag, .el-switch, .el-avatar) {
-        padding: 0;
-        .cell { text-overflow: clip; }
-    }
+	&:has(.cell .el-button, .el-tag, .el-switch, .el-avatar) {
+		padding: 0;
+		.cell {
+			text-overflow: clip;
+		}
+	}
+	&:has(.el-image) {
+		padding: 3px;
+		.cell {
+			padding: 0;
+		}
+		.cell .el-image {
+			display: block;
+		}
+	}
 
-    .el-button.is-text {
-        height: 20px;
-    }
+	.el-button.is-text {
+		height: 20px;
+	}
 
-    .el-text--large {
-        font-size: var(--el-font-size-base);;
-    }
-    .el-button--large {
-        --el-button-size: 32px;
-    }
-    .el-tag--large {
-        height: 28px;
-    }
-    .el-button--default {
-        height: 28px;
-    }
-    .el-button [class*=el-icon]+span{
-        margin-left: 4px;
-    }
+	.el-text--large {
+		font-size: var(--el-font-size-base);
+	}
+	.el-button--large {
+		--el-button-size: 32px;
+	}
+	.el-tag--large {
+		height: 28px;
+	}
+	.el-button--default {
+		height: 28px;
+	}
+	.el-button [class*='el-icon'] + span {
+		margin-left: 4px;
+	}
 
-    .iconfont {
-        font-size: unset !important;
-    }
+	.iconfont {
+		font-size: unset !important;
+	}
 }
-.el-table [class*=el-table__row--level] .el-table__expand-icon {
-    vertical-align: middle;
+.el-table [class*='el-table__row--level'] .el-table__expand-icon {
+	vertical-align: middle;
 }
 
 $--el-table-text-color: #fb6d49;
@@ -571,11 +582,11 @@ $--el-table-text-color: #fb6d49;
 }
 
 .el-tree {
-    --el-tree-node-content-height: 30px;
+	--el-tree-node-content-height: 30px;
 
-    .el-tree-node__content {
-        line-height: var(--el-tree-node-content-height);
-    }
+	.el-tree-node__content {
+		line-height: var(--el-tree-node-content-height);
+	}
 }
 
 // hack列表页
@@ -604,7 +615,7 @@ $--el-table-text-color: #fb6d49;
 			justify-content: space-between;
 
 			.el-card__body {
-                flex: 1;
+				flex: 1;
 				height: 0;
 				display: flex;
 				//padding: 5px 5px 0px 5px;
@@ -624,15 +635,14 @@ $--el-table-text-color: #fb6d49;
 	}
 }
 
-
 /* Splitter 分隔面板
 ------------------------------- */
 .smallbar-el-splitter {
-    .el-splitter-bar {
-        width: 8px !important;
+	.el-splitter-bar {
+		width: 8px !important;
 
-        .el-splitter-bar__dragger {
-            height: 100px !important;
-        }
-    }
+		.el-splitter-bar__dragger {
+			height: 100px !important;
+		}
+	}
 }

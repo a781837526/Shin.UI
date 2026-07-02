@@ -9,19 +9,23 @@
 					<el-input v-model="state.queryParams.fileName" placeholder="文件名称" clearable />
 				</el-form-item>
 				<el-form-item label="开始时间" prop="name">
-					<el-date-picker v-model="state.queryParams.startTime" type="datetime" placeholder="开始时间" value-format="YYYY-MM-DD HH:mm:ss" />
+					<el-date-picker v-model="state.queryParams.startTime" type="datetime" placeholder="开始时间"
+						value-format="YYYY-MM-DD HH:mm:ss" />
 				</el-form-item>
 				<el-form-item label="结束时间" prop="code">
-					<el-date-picker v-model="state.queryParams.endTime" type="datetime" placeholder="结束时间" value-format="YYYY-MM-DD HH:mm:ss" />
+					<el-date-picker v-model="state.queryParams.endTime" type="datetime" placeholder="结束时间"
+						value-format="YYYY-MM-DD HH:mm:ss" />
 				</el-form-item>
 				<el-form-item>
 					<el-button-group>
-						<el-button type="primary" icon="ele-Search" @click="handleQuery" v-auth="'sysFile:page'"> 查询 </el-button>
+						<el-button type="primary" icon="ele-Search" @click="handleQuery" v-auth="'sysFile:page'"> 查询
+						</el-button>
 						<el-button icon="ele-Refresh" @click="resetQuery"> 重置 </el-button>
 					</el-button-group>
 				</el-form-item>
 				<el-form-item>
-					<el-button type="primary" icon="ele-Plus" @click="openUploadDialog" v-auth="'sysFile:uploadFile'"> 上传 </el-button>
+					<el-button type="primary" icon="ele-Plus" @click="openUploadDialog" v-auth="'sysFile:uploadFile'">
+						上传 </el-button>
 				</el-form-item>
 			</el-form>
 		</el-card>
@@ -29,75 +33,68 @@
 		<el-card class="full-table" shadow="hover" style="margin-top: 5px">
 			<el-table :data="state.fileData" style="width: 100%" v-loading="state.loading" border>
 				<el-table-column type="index" label="序号" width="55" align="center" />
-				<el-table-column prop="fileName" label="名称" min-width="150" header-align="center" show-overflow-tooltip />
-				<el-table-column prop="suffix" label="后缀" align="center" show-overflow-tooltip>
+				<el-table-column prop="fileName" label="名称" min-width="150" header-align="center"
+					show-overflow-tooltip />
+				<el-table-column prop="suffix" label="后缀" width="80" align="center">
 					<template #default="scope">
 						<el-tag round>{{ scope.row.suffix }}</el-tag>
 					</template>
 				</el-table-column>
-				<el-table-column prop="sizeKb" label="大小kb" align="center" show-overflow-tooltip />
-				<el-table-column prop="url" label="预览" align="center">
+				<el-table-column prop="sizeKb" label="大小kb" width="80" align="center" />
+				<el-table-column prop="url" label="预览" width="80" align="center">
 					<template #default="scope">
-						<el-image
-							style="width: 60px; height: 60px"
-							:src="getFileUrl(scope.row)"
-							alt="无法预览"
-							:lazy="true"
-							:hide-on-click-modal="true"
-							:preview-src-list="[getFileUrl(scope.row)]"
-							:initial-index="0"
-							fit="scale-down"
-							preview-teleported
-						>
-							<template #error> </template>
+						<el-image style="width: 73px; height: 42px; margin: auto;" :src="getFileUrl(scope.row)"
+							:lazy="true" :hide-on-click-modal="true" :preview-src-list="[getFileUrl(scope.row)]"
+							:initial-index="0" fit="fill" preview-teleported>
+							<template #error>
+								<div class="el-image__error">无缩略图</div>
+							</template>
 						</el-image>
 					</template>
 				</el-table-column>
-				<el-table-column prop="bucketName" label="存储位置" align="center" show-overflow-tooltip />
-				<el-table-column prop="id" label="存储标识" align="center" show-overflow-tooltip />
-				<el-table-column prop="fileType" label="文件类型" min-width="100" header-align="center" show-overflow-tooltip />
-				<el-table-column prop="isPublic" label="是否公开" min-width="100" header-align="center" show-overflow-tooltip>
+				<el-table-column prop="bucketName" label="存储位置" width="90" align="center" />
+				<el-table-column prop="id" label="存储标识" width="150" align="center" show-overflow-tooltip />
+				<el-table-column prop="fileType" label="文件类型" width="100" align="center" />
+				<el-table-column prop="isPublic" label="公开" width="80" align="center">
 					<template #default="scope">
 						<el-tag v-if="scope.row.isPublic === true" type="success">是</el-tag>
 						<el-tag v-else type="danger">否</el-tag>
 					</template>
 				</el-table-column>
-				<el-table-column prop="relationName" label="关联对象名称" min-width="150" align="center" />
-				<el-table-column prop="relationId" label="关联对象Id" align="center" />
-				<el-table-column prop="belongId" label="所属Id" align="center" />
-				<el-table-column label="修改记录" width="100" align="center" show-overflow-tooltip>
+				<el-table-column prop="relationName" label="关联对象名" width="100" align="center" show-overflow-tooltip />
+				<el-table-column prop="relationId" label="关联对象Id" width="100" align="center" show-overflow-tooltip />
+				<el-table-column prop="belongId" label="所属Id" width="100" align="center" show-overflow-tooltip />
+				<el-table-column label="修改记录" width="100" align="center">
 					<template #default="scope">
 						<ModifyRecord :data="scope.row" />
 					</template>
 				</el-table-column>
-				<el-table-column label="操作" width="260" fixed="right" align="center" show-overflow-tooltip>
+				<el-table-column label="操作" width="180" fixed="right" align="center">
 					<template #default="scope">
 						<el-button-group>
-							<el-button icon="ele-View" size="small" type="primary" @click="openFilePreviewDialog(scope.row)" v-auth="'sysFile:delete'"></el-button>
-							<el-button icon="ele-Download" size="small" type="primary" @click="downloadFile(scope.row)" v-auth="'sysFile:downloadFile'"></el-button>
-							<el-button icon="ele-Delete" size="small" type="danger" @click="delFile(scope.row)" v-auth="'sysFile:delete'"></el-button>
-							<el-button icon="ele-Edit" size="small" type="primary" @click="openEditSysFile(scope.row)" v-auth="'sysFile:update'"></el-button>
+							<el-button icon="ele-View" size="small" type="primary"
+								@click="openFilePreviewDialog(scope.row)" v-auth="'sysFile:delete'"></el-button>
+							<el-button icon="ele-Download" size="small" type="primary" @click="downloadFile(scope.row)"
+								v-auth="'sysFile:downloadFile'"></el-button>
+							<el-button icon="ele-Delete" size="small" type="danger" @click="delFile(scope.row)"
+								v-auth="'sysFile:delete'"></el-button>
+							<el-button icon="ele-Edit" size="small" type="primary" @click="openEditSysFile(scope.row)"
+								v-auth="'sysFile:update'"></el-button>
 						</el-button-group>
 					</template>
 				</el-table-column>
 			</el-table>
-			<el-pagination
-				v-model:currentPage="state.tableParams.page"
-				v-model:page-size="state.tableParams.pageSize"
-				:total="state.tableParams.total"
-				:page-sizes="[10, 20, 50, 100]"
-				size="small"
-				background
-				@size-change="handleSizeChange"
-				@current-change="handleCurrentChange"
-				layout="total, sizes, prev, pager, next, jumper"
-			/>
+			<el-pagination v-model:currentPage="state.tableParams.page" v-model:page-size="state.tableParams.pageSize"
+				:total="state.tableParams.total" :page-sizes="[10, 20, 50, 100]" size="small" background
+				@size-change="handleSizeChange" @current-change="handleCurrentChange"
+				layout="total, sizes, prev, pager, next, jumper" />
 		</el-card>
 
 		<el-dialog v-model="state.dialogUploadVisible" :lock-scroll="false" draggable width="400px">
 			<template #header>
 				<div style="color: #fff">
-					<el-icon size="16" style="margin-right: 3px; display: inline; vertical-align: middle"> <ele-UploadFilled /> </el-icon>
+					<el-icon size="16" style="margin-right: 3px; display: inline; vertical-align: middle">
+						<ele-UploadFilled /> </el-icon>
 					<span> 上传文件 </span>
 				</div>
 			</template>
@@ -111,7 +108,8 @@
 					<el-radio :value="false">否</el-radio>
 					<el-radio :value="true">是</el-radio>
 				</el-radio-group>
-				<el-upload ref="uploadRef" drag :auto-upload="false" :limit="1" :file-list="state.fileList" action :on-change="handleChange" accept=".jpg,.png,.bmp,.gif,.txt,.xml,.pdf,.xlsx,.docx">
+				<el-upload ref="uploadRef" drag :auto-upload="false" :limit="1" :file-list="state.fileList" action
+					:on-change="handleChange" accept=".jpg,.png,.bmp,.gif,.txt,.xml,.pdf,.xlsx,.docx">
 					<el-icon class="el-icon--upload">
 						<ele-UploadFilled />
 					</el-icon>
@@ -129,16 +127,17 @@
 			</template>
 		</el-dialog>
 
-		<el-drawer :title="state.fileName" v-model="state.dialogDocxVisible" size="50%" destroy-on-close>
-			<vue-office-docx :src="state.docxUrl" style="height: 100vh" @rendered="renderedHandler" @error="errorHandler" />
+		<el-drawer :title="state.fileName" v-model="state.dialogDocxVisible" size="auto" destroy-on-close>
+			<vue-office-docx :src="state.docxUrl" @rendered="renderedHandler" @error="errorHandler" />
 		</el-drawer>
-		<el-drawer :title="state.fileName" v-model="state.dialogXlsxVisible" size="50%" destroy-on-close>
-			<vue-office-excel :src="state.excelUrl" style="height: 100vh" @rendered="renderedHandler" @error="errorHandler" />
+		<el-drawer :title="state.fileName" v-model="state.dialogXlsxVisible" destroy-on-close>
+			<vue-office-excel :src="state.excelUrl" @rendered="renderedHandler" @error="errorHandler" />
 		</el-drawer>
-		<el-drawer :title="state.fileName" v-model="state.dialogPdfVisible" size="50%" destroy-on-close>
-			<vue-office-pdf :src="state.pdfUrl" style="height: 100vh" @rendered="renderedHandler" @error="errorHandler" />
+		<el-drawer :title="state.fileName" v-model="state.dialogPdfVisible" destroy-on-close>
+			<vue-office-pdf :src="state.pdfUrl" @rendered="renderedHandler" @error="errorHandler" />
 		</el-drawer>
-		<el-image-viewer v-if="state.showViewer" :url-list="state.previewList" :hideOnClickModal="true" @close="state.showViewer = false"></el-image-viewer>
+		<el-image-viewer v-if="state.showViewer" :url-list="state.previewList" :hideOnClickModal="true"
+			@close="state.showViewer = false"></el-image-viewer>
 		<EditSysFile ref="editSysFileRef" title="编辑文件" @handleQuery="handleQuery" />
 	</div>
 </template>
@@ -265,7 +264,7 @@ const delFile = (row: any) => {
 			handleQuery();
 			ElMessage.success('删除成功');
 		})
-		.catch(() => {});
+		.catch(() => { });
 };
 
 // 打开文件预览页面
@@ -317,7 +316,7 @@ const openEditSysFile = (row: any) => {
 };
 
 // 文件渲染完成
-const renderedHandler = () => {};
+const renderedHandler = () => { };
 // 文件渲染失败
-const errorHandler = () => {};
+const errorHandler = () => { };
 </script>
