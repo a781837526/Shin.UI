@@ -1,4 +1,4 @@
-<!-- 组件使用文档： https://gitee.com/zuohuaijun/Admin.NET/pulls/1559  -->
+<!-- 组件使用文档： https://gitee.com/zuohuaijun/Shin.NET/pulls/1559  -->
 <script setup lang="ts">
 import { reactive, watch, PropType } from 'vue';
 import { useUserInfo } from '/@/stores/userInfo';

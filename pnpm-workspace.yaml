@@ -6,6 +6,7 @@ allowBuilds:
   '@vue-office/pdf': true
   core-js: true
   es5-ext: true
+  esbuild: false
   json-editor-vue: true
   vue-demi: true
 onlyBuiltDependencies:

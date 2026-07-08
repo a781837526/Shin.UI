@@ -6,7 +6,7 @@
 		</template>
 		<div style="height: 210px; text-align: center">
 			<img :src="verSvg" style="height: 140px" />
-			<h2 style="margin-top: 15px">Admin.NET</h2>
+			<h2 style="margin-top: 15px">Shin.NET</h2>
 			<p style="margin-top: 5px">最新版本 {{ version }}</p>
 		</div>
 		<div style="margin-top: 20px; margin-bottom: 20px; float: right">
@@ -39,10 +39,10 @@ const getVer = () => {
 };
 
 const golog = () => {
-	window.open('https://gitee.com/zuohuaijun/Admin.NET/issues');
+	window.open('https://gitee.com/zuohuaijun/Shin.NET/issues');
 };
 
 const gogit = () => {
-	window.open('https://gitee.com/zuohuaijun/Admin.NET.git');
+	window.open('https://gitee.com/zuohuaijun/Shin.NET.git');
 };
 </script>

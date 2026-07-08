@@ -1,10 +1,10 @@
 {
-	"name": "admin.net",
+	"name": "shin.net",
 	"type": "module",
 	"version": "2.4.33",
 	"packageManager": "pnpm@11.9.0",
 	"lastBuildTime": "2026.06.25",
-	"description": "Admin.NET 站在巨人肩膀上的 .NET 通用权限开发框架",
+	"description": "Shin.NET 通用权限开发框架",
 	"author": "zuohuaijun",
 	"license": "MIT",
 	"scripts": {

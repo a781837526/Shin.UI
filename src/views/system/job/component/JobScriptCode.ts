@@ -16,7 +16,7 @@ using Yitter.IdGenerator;
 
 #endregion
 
-namespace Admin.NET.Core;
+namespace Shin.NET.Core;
 
 /// <summary>
 /// 动态作业任务

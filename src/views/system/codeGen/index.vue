@@ -145,7 +145,7 @@ const handleCurrentChange = (val: number) => {
 const openAddDialog = () => {
 	state.editTitle = '增加';
 	EditCodeGenRef.value?.openDialog({
-		authorName: 'Admin.NET',
+		authorName: 'Shin.NET',
 		generateType: '200',
 		printType: 'off',
 		menuIcon: 'ele-Menu',

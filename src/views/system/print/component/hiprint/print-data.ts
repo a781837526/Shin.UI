@@ -1,7 +1,7 @@
 // 打印数据
 import logoImg from '/@/assets/logo.png';
 export default {
-	barCode: 'Admin.NET',
+	barCode: 'Shin.NET',
 	qrCode: '二维码',
 	longText: '长文本',
 	imageUrl: logoImg,
