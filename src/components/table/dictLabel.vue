@@ -37,7 +37,7 @@ const state = reactive({
 });
 
 onMounted(() => {
-  console.warn('DictLabel组件将在不久后移除，请使用新组件：https://gitee.com/zuohuaijun/Shin.NET/pulls/1559');
+  console.warn('DictLabel组件将在不久后移除，请使用新组件：https://gitee.com/zuohuaijun/Admin.NET/pulls/1559');
   setDictValue(props.value);
 });
 

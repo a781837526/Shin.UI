@@ -1,6 +1,6 @@
 <template>
 	<div class="sys-codeGen-container">
-		<el-card shadow="hover" :body-style="{ padding: 5 }">
+		<el-card shadow="hover" class="card-tight">
 			<el-form :model="state.queryParams" ref="queryForm" :inline="true">
 				<el-form-item label="业务名">
 					<el-input placeholder="业务名" clearable @keyup.enter="handleQuery" v-model="state.queryParams.busName" />
@@ -145,7 +145,7 @@ const handleCurrentChange = (val: number) => {
 const openAddDialog = () => {
 	state.editTitle = '增加';
 	EditCodeGenRef.value?.openDialog({
-		authorName: 'Shin.NET',
+		authorName: 'Admin.NET',
 		generateType: '200',
 		printType: 'off',
 		menuIcon: 'ele-Menu',
